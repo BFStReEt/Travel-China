@@ -19,13 +19,13 @@
 .journey-map{position:relative;margin-top:18px;padding:14px;border-radius:26px;background:linear-gradient(180deg,rgba(255,250,246,.86),rgba(251,240,234,.72));border:1px solid rgba(155,67,51,.10);overflow:hidden;min-height:142px}
 .journey-map svg{display:block;width:100%;height:106px;position:relative;z-index:1}
 .journey-path{fill:none;stroke:rgba(180,108,89,.45);stroke-width:3;stroke-linecap:round;stroke-dasharray:8 10}
-.journey-plane{position:absolute;top:0;left:0;z-index:6;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:linear-gradient(135deg,#b74d38,#8d3527);color:#fff;font-size:18px;box-shadow:0 12px 22px rgba(141,53,39,.22);offset-path:path("M18 60 C58 18, 110 18, 152 50 S234 82, 284 40 S364 14, 416 48 S504 82, 528 60 S544 60, 548 60");offset-rotate:0deg;animation:planeBuzz 14.8s cubic-bezier(.32,.08,.2,1) infinite}
+.journey-plane{position:absolute;top:0;left:0;z-index:6;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:linear-gradient(135deg,#b74d38,#8d3527);color:#fff;font-size:18px;box-shadow:0 12px 22px rgba(141,53,39,.22);offset-path:path("M18 60 C58 18, 110 18, 152 50 S234 82, 284 40 S364 14, 416 48 S494 78, 522 62 S540 58, 556 58");offset-rotate:0deg;animation:planeBuzz 14.8s cubic-bezier(.32,.08,.2,1) infinite}
 .journey-stops{position:absolute;inset:0;z-index:3}
 .journey-stop{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:11px;font-weight:700;text-align:center}
 .journey-stop::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:999px;background:#fff;border:2px solid rgba(183,77,56,.35);box-shadow:0 2px 8px rgba(141,53,39,.10)}
 .journey-stop span{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.96);border:1px solid rgba(155,67,51,.12);box-shadow:0 10px 18px rgba(141,53,39,.08);white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .journey-stop:hover span{transform:translateY(-2px);box-shadow:0 12px 22px rgba(141,53,39,.14);background:#fff}
-.journey-stop:nth-child(1){left:7%;top:72%}.journey-stop:nth-child(2){left:20%;top:51%}.journey-stop:nth-child(3){left:35%;top:74%}.journey-stop:nth-child(4){left:54%;top:53%}.journey-stop:nth-child(5){left:69%;top:74%}.journey-stop:nth-child(6){left:80.5%;top:50%}.journey-stop:nth-child(7){left:88.8%;top:64%}
+.journey-stop:nth-child(1){left:7%;top:72%}.journey-stop:nth-child(2){left:20%;top:51%}.journey-stop:nth-child(3){left:35%;top:74%}.journey-stop:nth-child(4){left:54%;top:53%}.journey-stop:nth-child(5){left:69%;top:74%}.journey-stop:nth-child(6){left:78.5%;top:47%}.journey-stop:nth-child(7){left:92.5%;top:68%}
 @keyframes planeBuzz{0%{offset-distance:-10%;opacity:0;transform:scale(.8)}5%{offset-distance:0%;opacity:.65;transform:scale(.92)}8%{offset-distance:0%;opacity:1;transform:scale(1)}11%{offset-distance:0%;opacity:1;transform:scale(1)}24%{offset-distance:14%;opacity:1;transform:scale(1)}27%{offset-distance:14%;opacity:1;transform:scale(1)}40%{offset-distance:30%;opacity:1;transform:scale(1)}43%{offset-distance:30%;opacity:1;transform:scale(1)}56%{offset-distance:47%;opacity:1;transform:scale(1)}59%{offset-distance:47%;opacity:1;transform:scale(1)}71%{offset-distance:64%;opacity:1;transform:scale(1)}74%{offset-distance:64%;opacity:1;transform:scale(1)}84%{offset-distance:80%;opacity:1;transform:scale(1)}88%{offset-distance:80%;opacity:1;transform:scale(1)}94%{offset-distance:92%;opacity:1;transform:scale(1)}97%{offset-distance:100%;opacity:1;transform:scale(1)}100%{offset-distance:100%;opacity:0;transform:scale(1)}}
 .hero-link{display:block;color:inherit}
 .hero-link:hover .ov{transform:translateY(-2px)}
@@ -38,11 +38,11 @@
 <section class="hero panel">
 <div>
 <span class="pill">Du lịch Trung Quốc • 6 ngày 5 đêm</span>
-<h1>Khám phá Thượng Hải, Ô Trấn, Đồn Khê và Tề Vân Sơn</h1>
+<h1>Hành trình khám phá Trung Quốc</h1>
       <p>Hành trình 6 ngày 5 đêm đi qua nhịp sống hiện đại của Thượng Hải, vẻ yên bình của Ô Trấn, hồ rừng Thanh Sơn và cảnh núi Tề Vân Sơn trước khi quay về TP.HCM.</p>
 <div class="journey-map" aria-label="Đường bay qua các điểm trong hành trình">
   <svg viewBox="0 0 600 82" preserveAspectRatio="none" aria-hidden="true">
-    <path class="journey-path" d="M18 56 C58 12, 110 10, 152 44 S234 78, 284 36 S364 8, 416 42 S504 78, 538 48 S546 44, 548 44" />
+    <path class="journey-path" d="M18 56 C58 12, 110 10, 152 44 S234 78, 284 36 S364 8, 416 42 S494 78, 522 60 S540 56, 556 56" />
   </svg>
   <span class="journey-plane" aria-hidden="true">✈</span>
   <div class="journey-stops">
@@ -134,11 +134,11 @@
   </div>
   <div class="days">
 <article class="day" id="day-1">
-  <div class="day-side"><span class="tag">Ngày 1</span><div><div class="route-points"><span class="route-node">TP.HCM</span><span class="route-arrow">→</span><span class="route-node">Đồn Khê</span></div><p class="route-text">Bay tối, đến nơi và nhận phòng nghỉ ngơi.</p></div></div>
+  <div class="day-side"><span class="tag">Ngày 1</span><div><div class="route-points"><span class="route-node">TP.HCM</span><span class="route-arrow">→</span><span class="route-node">Đồn Khê</span></div><p class="route-text">Khởi hành từ Tân Sơn Nhất, đến Đồn Khê, ăn tối tại địa phương và về khách sạn nghỉ ngơi.</p></div></div>
   <div class="day-main">
     <div class="cover"><img src="https://images.unsplash.com/photo-1757102455225-677174ad2fc2?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800" alt="Đồn Khê" loading="lazy" referrerpolicy="no-referrer" /></div>
     <div class="info">
-      <div class="line"><strong>Địa điểm:</strong> Tân Sơn Nhất • Sân bay Đồn Khê • Nhận phòng</div>
+      <div class="line"><strong>Địa điểm:</strong> Tân Sơn Nhất • Sân bay Đồn Khê • Tự do khám phá phố cổ</div>
       <div class="line"><strong>Nghỉ đêm:</strong> Huangshan Parkview Hotel</div>
       <div class="places">
         <div class="mini-card"><img src="https://www.xenguyenvinh.com/Portals/28264/tintuc/Ga-quoc-te-san-bay-Tan-Son-Nhat-Minh-Hoang.jpg" alt="Tân Sơn Nhất" loading="lazy" referrerpolicy="no-referrer" /><span>Tân Sơn Nhất</span></div>
@@ -146,8 +146,8 @@
         <div class="mini-card"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Khách sạn" loading="lazy" referrerpolicy="no-referrer" /><span>Nhận phòng khách sạn</span></div>
       </div>
       <div class="meals">
-        <section class="meal"><h4>Bữa trưa</h4><ul><li>Không bố trí bữa trưa riêng</li></ul></section>
-        <section class="meal"><h4>Bữa tối • 40 tệ</h4><ul><li>Canh sườn hầm rong biển</li><li>Cá kho</li><li>Vịt quay</li><li>Lẩu tam tiên Huệ Châu</li></ul></section>
+        <section class="meal"><h4>Bữa trên máy bay</h4><ul><li>Suất ăn theo chuyến bay</li></ul></section>
+        <section class="meal"><h4>Bữa tối • 40 tệ</h4><ul><li>Dùng bữa tại nhà hàng địa phương</li><li>Tự do dạo quanh khu vực nghỉ đêm</li></ul></section>
       </div>
     </div>
   </div>
@@ -173,11 +173,11 @@
   </div>
 </article>
 <article class="day" id="day-3">
-  <div class="day-side"><span class="tag">Ngày 3</span><div><div class="route-points"><span class="route-node">Ô Trấn</span><span class="route-arrow">→</span><span class="route-node">Thượng Hải</span></div><p class="route-text">Ngày chuyển sang phần hiện đại của hành trình với các điểm check-in thành phố.</p></div></div>
+  <div class="day-side"><span class="tag">Ngày 3</span><div><div class="route-points"><span class="route-node">Ô Trấn</span><span class="route-arrow">→</span><span class="route-node">Thượng Hải</span></div><p class="route-text">Rời cổ trấn đi Thượng Hải, tham quan bến sông, tàu LV và khu phố mua sắm sầm uất.</p></div></div>
   <div class="day-main">
     <div class="cover"><img src="https://images.unsplash.com/photo-1757836631130-ea95e36e62bb?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800" alt="Thượng Hải" loading="lazy" referrerpolicy="no-referrer" /></div>
     <div class="info">
-      <div class="line"><strong>Địa điểm:</strong> Bến Thượng Hải • Phố Nam Kinh • Check-in thành phố</div>
+      <div class="line"><strong>Địa điểm:</strong> Tơ lụa • Bến Thượng Hải • Tàu LV • Phố Nam Kinh</div>
       <div class="line"><strong>Nghỉ đêm:</strong> Shanghai Fangyu Hotel</div>
       <div class="places">
         <div class="mini-card"><img src="https://images.unsplash.com/photo-1757836631130-ea95e36e62bb?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Bến Thượng Hải" loading="lazy" referrerpolicy="no-referrer" /><span>Bến Thượng Hải</span></div>
@@ -193,11 +193,11 @@
 </article>
 
 <article class="day" id="day-4">
-  <div class="day-side"><span class="tag">Ngày 4</span><div><div class="route-points"><span class="route-node">Thượng Hải</span></div><p class="route-text">Một ngày gom phần phố cổ, vườn cổ và góc nhìn hiện đại trong trung tâm thành phố.</p></div></div>
+  <div class="day-side"><span class="tag">Ngày 4</span><div><div class="route-points"><span class="route-node">Thượng Hải</span></div><p class="route-text">Một ngày tham quan trung tâm Thượng Hải với phố cổ, vườn cổ và khu tài chính hiện đại.</p></div></div>
   <div class="day-main">
     <div class="cover"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Chenghuang_Temple.jpg" alt="Miếu Thành Hoàng" loading="lazy" referrerpolicy="no-referrer" /></div>
     <div class="info">
-      <div class="line"><strong>Địa điểm:</strong> Miếu Thành Hoàng • Dự Viên • Lục Gia Chủy</div>
+      <div class="line"><strong>Địa điểm:</strong> Đồng Nhân Đường • Miếu Thành Hoàng • Dự Viên • Lục Gia Chủy</div>
       <div class="line"><strong>Nghỉ đêm:</strong> Shanghai Fangyu Hotel</div>
       <div class="places">
         <div class="mini-card"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Chenghuang_Temple.jpg" alt="Miếu Thành Hoàng" loading="lazy" referrerpolicy="no-referrer" /><span>Miếu Thành Hoàng</span></div>
@@ -213,11 +213,11 @@
 </article>
 
 <article class="day" id="day-5">
-  <div class="day-side"><span class="tag">Ngày 5</span><div><div class="route-points"><span class="route-node">Thượng Hải</span><span class="route-arrow">→</span><span class="route-node">Hàng Châu</span><span class="route-arrow">→</span><span class="route-node">Tề Vân Sơn</span></div><p class="route-text">Một ngày chuyển cảnh từ hồ nước sang núi, nhịp vừa phải và ảnh khá đẹp.</p></div></div>
+  <div class="day-side"><span class="tag">Ngày 5</span><div><div class="route-points"><span class="route-node">Thượng Hải</span><span class="route-arrow">→</span><span class="route-node">Hàng Châu</span><span class="route-arrow">→</span><span class="route-node">Tề Vân Sơn</span></div><p class="route-text">Di chuyển tới Hàng Châu, dạo Tây Hồ rồi tiếp tục về Tề Vân để nghỉ đêm.</p></div></div>
   <div class="day-main">
     <div class="cover"><img src="https://images.unsplash.com/photo-1586862118451-efc84a66e704?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800" alt="Tây Hồ Hàng Châu" loading="lazy" referrerpolicy="no-referrer" /></div>
     <div class="info">
-      <div class="line"><strong>Địa điểm:</strong> Tây Hồ Hàng Châu • Di chuyển lên núi • Tề Vân Sơn</div>
+      <div class="line"><strong>Địa điểm:</strong> Tây Hồ Hàng Châu • Thị trấn Tề Vân Tường Nguyên • Nghỉ đêm Tề Vân</div>
       <div class="line"><strong>Nghỉ đêm:</strong> Sun Forest Resort Hotel / Huangshan Parkview Hotel</div>
       <div class="places">
         <div class="mini-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoHg9tLKtzun7WihBZ97psCC0Gmg9p1x1-uw&s" alt="Tây Hồ" loading="lazy" referrerpolicy="no-referrer" /><span>Tây Hồ Hàng Châu</span></div>
@@ -233,20 +233,20 @@
 </article>
 
 <article class="day" id="day-6">
-  <div class="day-side"><span class="tag">Ngày 6</span><div><div class="route-points"><span class="route-node">Tề Vân Sơn</span><span class="route-arrow">→</span><span class="route-node">Đồn Khê</span><span class="route-arrow">→</span><span class="route-node">TP.HCM</span></div><p class="route-text">Chặng cuối có cáp treo, ngắm núi và ghé phố cổ trước khi ra sân bay.</p></div></div>
+  <div class="day-side"><span class="tag">Ngày 6</span><div><div class="route-points"><span class="route-node">Tề Vân Sơn</span><span class="route-arrow">→</span><span class="route-node">Đồn Khê</span><span class="route-arrow">→</span><span class="route-node">TP.HCM</span></div><p class="route-text">Khám phá núi Tề Vân bằng cáp treo, ghé các thắng cảnh chính rồi ra sân bay về lại TP.HCM.</p></div></div>
   <div class="day-main">
     <div class="cover"><img src="https://hanvinatravel.vn/uploads/images/cap-treo-van-coc-2_1.jpg" alt="Tề Vân Sơn" loading="lazy" referrerpolicy="no-referrer" /></div>
     <div class="info">
-      <div class="line"><strong>Địa điểm:</strong> Cáp treo Tề Vân • Nhất Thiên Môn • Phố cổ Đồn Khê</div>
+      <div class="line"><strong>Địa điểm:</strong> Cáp treo Tề Vân • Nhất Thiên Môn • Nhị Thiên Môn • Phố Nguyệt Hoa • Đỉnh Hương Lô</div>
       <div class="line"><strong>Nghỉ đêm:</strong> Không nghỉ đêm</div>
       <div class="places">
         <div class="mini-card"><img src="https://images.unsplash.com/photo-1662486881475-ec5c2fc18bbd?auto=format&fit=crop&fm=jpg&ixlib=rb-4.0.3&q=80&w=1200" alt="Cáp treo" loading="lazy" referrerpolicy="no-referrer" /><span>Cáp treo Tề Vân</span></div>
-        <div class="mini-card"><img src="https://images.unsplash.com/photo-1757102455225-677174ad2fc2?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Phố cổ Đồn Khê" loading="lazy" referrerpolicy="no-referrer" /><span>Phố cổ Đồn Khê</span></div>
+        <div class="mini-card"><img src="https://hanvinatravel.vn/uploads/images/cap-treo-van-coc-2_1.jpg" alt="Thắng cảnh núi Tề Vân" loading="lazy" referrerpolicy="no-referrer" /><span>Nhất Thiên Môn • Nhị Thiên Môn</span></div>
         <div class="mini-card"><img src="https://vja-ui.useleadr.com/uploads/tau-bay-vj-1764745325476.jpg" alt="Ra sân bay" loading="lazy" referrerpolicy="no-referrer" /><span>Ra sân bay về lại TP.HCM</span></div>
       </div>
       <div class="meals">
         <section class="meal"><h4>Bữa trưa • 70 tệ</h4><ul><li>Buffet BBQ</li></ul></section>
-        <section class="meal"><h4>Bữa tối</h4><ul><li>Theo hành trình về</li></ul></section>
+        <section class="meal"><h4>Buổi chiều</h4><ul><li>Tham quan, mua sắm trước khi ra sân bay</li><li>Kết thúc hành trình</li></ul></section>
       </div>
     </div>
   </div>
