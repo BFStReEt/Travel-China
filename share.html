@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Journey Chapters | Trung Quốc 6N5Đ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f1eee8;
+  --paper:#fbf8f2;
+  --paper-2:#f5f0e8;
+  --ink:#1f262b;
+  --muted:#6c7277;
+  --line:#ddd3c8;
+  --olive:#65735c;
+  --clay:#b56e4d;
+  --gold:#caa45d;
+  --shadow:0 20px 44px rgba(47,41,35,.08);
+  --radius-xl:30px;
+  --radius-lg:22px;
+  --radius-md:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Instrument Sans",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top right,rgba(202,164,93,.16),transparent 18%),
+    radial-gradient(circle at bottom left,rgba(181,110,77,.10),transparent 22%),
+    linear-gradient(180deg,#f4f1eb 0%,#eeebe4 100%);
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%}
+.page{
+  width:min(1320px,calc(100% - 28px));
+  margin:0 auto;
+  padding:20px 0 48px;
+}
+.layout{
+  display:grid;
+  grid-template-columns:300px minmax(0,1fr);
+  gap:22px;
+  align-items:start;
+}
+.rail,.chapter,.closing{
+  background:rgba(251,248,242,.94);
+  border:1px solid rgba(221,211,200,.92);
+  box-shadow:var(--shadow);
+}
+.rail{
+  position:sticky;
+  top:18px;
+  padding:22px;
+  border-radius:34px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:24px;
+}
+.seal{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--clay),#d29c74);
+  color:#fff;
+  font-size:18px;
+  font-weight:800;
+}
+.brand strong,.chapter h2,.chapter h3,.stat strong,.closing h3{
+  font-family:"Cormorant Garamond",serif;
+}
+.brand strong{
+  display:block;
+  font-size:24px;
+  line-height:.92;
+}
+.brand span,.rail p,.note p,.fact p,.mini p,.closing p{
+  color:var(--muted);
+  line-height:1.7;
+}
+.eyebrow{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#efe6d9;
+  color:var(--clay);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.rail h1{
+  margin:14px 0 12px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:54px;
+  line-height:.86;
+}
+.divider{
+  height:1px;
+  margin:20px 0;
+  background:linear-gradient(90deg,transparent,var(--line),transparent);
+}
+.nav{
+  display:grid;
+  gap:10px;
+}
+.nav a{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid transparent;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease;
+}
+.nav a:hover{
+  transform:translateX(3px);
+  background:#f7f1e8;
+  border-color:var(--line);
+}
+.num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:48px;
+  border-radius:16px;
+  background:#f1e7da;
+  color:var(--clay);
+  font-size:18px;
+  font-weight:800;
+}
+.nav strong{
+  display:block;
+  font-size:15px;
+}
+.nav span{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:12px;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.stat{
+  padding:14px;
+  border-radius:18px;
+  background:#f6f0e7;
+}
+.stat strong{
+  display:block;
+  font-size:28px;
+  line-height:1;
+}
+.stat span{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:12px;
+}
+.content{
+  display:grid;
+  gap:22px;
+}
+.hero-strip{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:18px;
+}
+.hero-photo,.hero-note,.chapter-media,.fact,.mini{
+  overflow:hidden;
+  border-radius:28px;
+  background:var(--paper);
+  border:1px solid var(--line);
+}
+.hero-photo{
+  position:relative;
+  min-height:620px;
+}
+.hero-photo img,.chapter-media img{
+  height:100%;
+  object-fit:cover;
+}
+.hero-overlay{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  padding:18px;
+  border-radius:22px;
+  background:rgba(255,251,246,.88);
+  backdrop-filter:blur(12px);
+}
+.hero-overlay strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:24px;
+}
+.hero-note{
+  display:grid;
+  align-content:space-between;
+  gap:18px;
+  padding:22px;
+  background:
+    linear-gradient(180deg,rgba(245,240,232,.98),rgba(251,248,242,.98));
+}
+.hero-note h2{
+  margin:14px 0 12px;
+  font-size:56px;
+  line-height:.88;
+}
+.hero-note p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.8;
+}
+.route-list{
+  display:grid;
+  gap:10px;
+}
+.route-list div{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 14px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:var(--gold);
+  box-shadow:0 0 0 5px rgba(202,164,93,.16);
+}
+.chapter{
+  padding:20px;
+  border-radius:34px;
+}
+.chapter-grid{
+  display:grid;
+  grid-template-columns:150px 1.05fr .95fr;
+  gap:18px;
+  align-items:start;
+}
+.chapter-index{
+  display:grid;
+  gap:10px;
+  justify-items:start;
+}
+.badge{
+  display:inline-flex;
+  width:88px;
+  height:88px;
+  align-items:center;
+  justify-content:center;
+  border-radius:24px;
+  background:linear-gradient(135deg,#efe5d6,#f8f4ed);
+  color:var(--clay);
+  font-family:"Cormorant Garamond",serif;
+  font-size:38px;
+  font-weight:700;
+}
+.label{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#f3ebdf;
+  color:var(--olive);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.chapter-copy h3{
+  margin:2px 0 10px;
+  font-size:40px;
+  line-height:.92;
+}
+.chapter-copy p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.75;
+}
+.chapter-route{
+  margin:12px 0 14px;
+  color:var(--clay);
+  font-size:14px;
+  font-weight:700;
+}
+.facts{
+  display:grid;
+  gap:12px;
+}
+.fact{
+  padding:16px;
+}
+.fact strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:16px;
+}
+.fact p{
+  margin:0;
+}
+.chapter-media{
+  min-height:320px;
+}
+.chapter-media.tall{
+  min-height:100%;
+}
+.chapter-gallery{
+  display:grid;
+  gap:12px;
+}
+.mini{
+  padding:14px;
+}
+.mini strong{
+  display:block;
+  margin-bottom:4px;
+  font-size:15px;
+}
+.mini p{
+  margin:0;
+}
+.closing{
+  padding:24px;
+  border-radius:34px;
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:18px;
+}
+.closing h3{
+  margin:0 0 10px;
+  font-size:46px;
+  line-height:.92;
+}
+.closing-boxes{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.closing-box{
+  padding:16px;
+  border-radius:20px;
+  background:#f5efe6;
+  border:1px solid var(--line);
+}
+.closing-box strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:16px;
+}
+@media (max-width:1120px){
+  .layout{grid-template-columns:1fr}
+  .rail{position:relative;top:auto}
+  .hero-strip,.closing,.chapter-grid{grid-template-columns:1fr}
+  .hero-photo{min-height:420px}
+  .chapter-media{min-height:260px}
+}
+@media (max-width:760px){
+  .page{width:min(100% - 16px,1320px);padding-top:16px}
+  .rail,.chapter,.closing,.hero-note{padding:18px}
+  .hero-note h2{font-size:42px}
+  .rail h1{font-size:42px}
+  .chapter-copy h3{font-size:32px}
+  .closing h3{font-size:36px}
+  .stats,.closing-boxes{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="layout">
+    <aside class="rail">
+      <div class="brand">
+        <span class="seal">旅</span>
+        <div>
+          <strong>Journey<br />Chapters</strong>
+          <span>Share page concept</span>
+        </div>
+      </div>
+
+      <span class="eyebrow">Completely Different Layout</span>
+      <h1>Trung Quốc 6 ngày 5 đêm</h1>
+      <p>Bản này không còn là landing page card cũng không là timeline kính mờ. Cấu trúc chuyển sang kiểu tạp chí hành trình với cột trái cố định và các chapter lớn bên phải.</p>
+
+      <div class="divider"></div>
+
+      <nav class="nav">
+        <a href="#chapter-1">
+          <span class="num">01</span>
+          <span><strong>Khởi hành</strong><span>TP.HCM đến Đồn Khê</span></span>
+        </a>
+        <a href="#chapter-2">
+          <span class="num">02</span>
+          <span><strong>Hồ và cổ trấn</strong><span>Hồ Matcha, Ô Trấn</span></span>
+        </a>
+        <a href="#chapter-3">
+          <span class="num">03</span>
+          <span><strong>Nhịp thành phố</strong><span>Thượng Hải hiện đại</span></span>
+        </a>
+        <a href="#chapter-4">
+          <span class="num">04</span>
+          <span><strong>Góc văn hóa</strong><span>Miếu, vườn cổ, phố cũ</span></span>
+        </a>
+        <a href="#chapter-5">
+          <span class="num">05</span>
+          <span><strong>Hàng Châu</strong><span>Tây Hồ và Tề Vân</span></span>
+        </a>
+        <a href="#chapter-6">
+          <span class="num">06</span>
+          <span><strong>Kết hành trình</strong><span>Cáp treo, sân bay, về nhà</span></span>
+        </a>
+      </nav>
+
+      <div class="divider"></div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>6</strong>
+          <span>chặng được kể như 6 chapter riêng</span>
+        </div>
+        <div class="stat">
+          <strong>2</strong>
+          <span>đêm ở Thượng Hải làm điểm nhấn</span>
+        </div>
+        <div class="stat">
+          <strong>1</strong>
+          <span>bố cục mới hoàn toàn cho share.html</span>
+        </div>
+        <div class="stat">
+          <strong>0</strong>
+          <span>sự giống nhau với flow cũ dạng card</span>
+        </div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="hero-strip">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1757836631130-ea95e36e62bb?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2200" alt="Thượng Hải" loading="eager" referrerpolicy="no-referrer" />
+          <div class="hero-overlay">
+            <strong>Một hành trình có nhịp chuyển cảnh rõ.</strong>
+            <p>Từ sân bay và điểm nghỉ đầu tiên, sang hồ rừng và cổ trấn, rồi bật lên nhịp đô thị của Thượng Hải trước khi kết bằng hồ và núi.</p>
+          </div>
+        </div>
+        <div class="hero-note">
+          <div>
+            <span class="eyebrow">Narrative Layout</span>
+            <h2>Không phải trang bán tour. Đây là trang kể hành trình.</h2>
+            <p>Thay vì xếp nhiều card nhỏ như mẫu landing page thông thường, bố cục này chia chuyến đi thành từng chapter lớn với nhịp đọc chậm hơn, mạnh về bố cục và hình ảnh.</p>
+          </div>
+          <div class="route-list">
+            <div><span class="dot"></span><span>TP.HCM → Đồn Khê</span></div>
+            <div><span class="dot"></span><span>Hồ Matcha → Ô Trấn</span></div>
+            <div><span class="dot"></span><span>Thượng Hải → Hàng Châu</span></div>
+            <div><span class="dot"></span><span>Tề Vân Sơn → quay về TP.HCM</span></div>
+          </div>
+        </div>
+      </div>
+
+      <article class="chapter" id="chapter-1">
+        <div class="chapter-grid">
+          <div class="chapter-index">
+            <span class="badge">01</span>
+            <span class="label">Arrival</span>
+          </div>
+          <div class="chapter-copy">
+            <h3>Khởi hành từ TP.HCM, đáp Đồn Khê</h3>
+            <div class="chapter-route">Tân Sơn Nhất • Sân bay Đồn Khê • Nhận phòng khách sạn</div>
+            <p>Chapter đầu dùng để mở nhịp. Không đẩy quá nhiều nội dung, chỉ giữ lại cảm giác bắt đầu chuyến đi: sân bay, bữa tối đầu tiên và một đêm nghỉ để chuẩn bị cho các điểm mạnh phía sau.</p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Nghỉ đêm</strong>
+                <p>Huangshan Parkview Hotel</p>
+              </div>
+              <div class="fact">
+                <strong>Bữa chính</strong>
+                <p>Bữa tối địa phương sau khi hạ cánh.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chapter-gallery">
+            <div class="chapter-media"><img src="https://www.xenguyenvinh.com/Portals/28264/tintuc/Ga-quoc-te-san-bay-Tan-Son-Nhat-Minh-Hoang.jpg" alt="Tân Sơn Nhất" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="mini">
+              <strong>Nhịp chương</strong>
+              <p>Mở đầu nhẹ và gọn để chapter 2 bật lên rõ hơn.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" id="chapter-2">
+        <div class="chapter-grid">
+          <div class="chapter-index">
+            <span class="badge">02</span>
+            <span class="label">Contrast</span>
+          </div>
+          <div class="chapter-copy">
+            <h3>Buổi sáng ở hồ xanh, buổi chiều vào cổ trấn</h3>
+            <div class="chapter-route">Đồn Khê • Hồ Matcha • Ô Trấn Tây Sách</div>
+            <p>Đây là chapter có độ chuyển mood mạnh nhất. Hồ Matcha tạo bề mặt xanh dịu, còn Ô Trấn đưa hành trình sang không khí cổ trấn sông nước. Về bố cục, chương này được đặt như một cú xoay thị giác của toàn trang.</p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Nổi bật</strong>
+                <p>Hai bối cảnh rất khác nhau trong cùng một ngày.</p>
+              </div>
+              <div class="fact">
+                <strong>Nghỉ đêm</strong>
+                <p>Wuzhen Fanpu Theme Culture.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chapter-gallery">
+            <div class="chapter-media"><img src="https://otrip.vn/wp-content/uploads/2025/05/1-Rung-nuoc-Ho-Thanh-Son.png" alt="Hồ Matcha" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="chapter-media"><img src="https://images.unsplash.com/photo-1564392495015-6879c09c5655?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400" alt="Ô Trấn" loading="lazy" referrerpolicy="no-referrer" /></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" id="chapter-3">
+        <div class="chapter-grid">
+          <div class="chapter-index">
+            <span class="badge">03</span>
+            <span class="label">City</span>
+          </div>
+          <div class="chapter-copy">
+            <h3>Rời Ô Trấn để bước vào nhịp sáng của Thượng Hải</h3>
+            <div class="chapter-route">Ô Trấn • Bến Thượng Hải • Phố Nam Kinh</div>
+            <p>Chương này đẩy tốc độ lên. Cổ trấn kết thúc, đô thị hiện đại mở ra. Nếu cột trái là mục lục của chuyến đi, thì chapter 3 là điểm xoay quan trọng nhất của toàn bộ câu chuyện.</p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Điểm nhìn mạnh</strong>
+                <p>Bến Thượng Hải và skyline là trọng tâm hình ảnh của trang.</p>
+              </div>
+              <div class="fact">
+                <strong>Nghỉ đêm</strong>
+                <p>Shanghai Fangyu Hotel.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chapter-gallery">
+            <div class="chapter-media tall"><img src="https://images.unsplash.com/photo-1757836631130-ea95e36e62bb?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600" alt="Thượng Hải" loading="lazy" referrerpolicy="no-referrer" /></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" id="chapter-4">
+        <div class="chapter-grid">
+          <div class="chapter-index">
+            <span class="badge">04</span>
+            <span class="label">Culture</span>
+          </div>
+          <div class="chapter-copy">
+            <h3>Một ngày đi qua miếu cổ, vườn cổ và khu tài chính</h3>
+            <div class="chapter-route">Miếu Thành Hoàng • Dự Viên • Lục Gia Chủy</div>
+            <p>Chapter này không cần dồn nhiều ảnh như chapter 2 hay 3. Nó đóng vai trò cân bằng lại nhịp, cho người xem thấy Thượng Hải không chỉ có skyline mà còn có những lớp văn hóa và cảnh quan khác.</p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Trục nội dung</strong>
+                <p>Cổ kính ở giữa đô thị hiện đại.</p>
+              </div>
+              <div class="fact">
+                <strong>Bữa tối</strong>
+                <p>Lẩu buffet 70 tệ.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chapter-gallery">
+            <div class="chapter-media"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Chenghuang_Temple.jpg" alt="Miếu Thành Hoàng" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="mini">
+              <strong>Dự Viên và Lục Gia Chủy</strong>
+              <p>Một chương trung gian để giữ chiều sâu cho câu chuyện hành trình.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" id="chapter-5">
+        <div class="chapter-grid">
+          <div class="chapter-index">
+            <span class="badge">05</span>
+            <span class="label">Slow Down</span>
+          </div>
+          <div class="chapter-copy">
+            <h3>Tây Hồ làm dịu nhịp trang trước khi lên núi</h3>
+            <div class="chapter-route">Thượng Hải • Hàng Châu • Tây Hồ • Tề Vân Sơn</div>
+            <p>Sau hai chapter đô thị, phần này đưa mắt người xem về mặt nước và sườn núi. Về bố cục, đây là đoạn hạ nhịp rõ ràng, làm chương cuối có chỗ để kết thúc gọn và đẹp.</p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Nhấn thị giác</strong>
+                <p>Tây Hồ là đoạn thở ra của toàn hành trình.</p>
+              </div>
+              <div class="fact">
+                <strong>Nghỉ đêm</strong>
+                <p>Sun Forest Resort Hotel hoặc Huangshan Parkview Hotel.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chapter-gallery">
+            <div class="chapter-media"><img src="https://images.unsplash.com/photo-1586862118451-efc84a66e704?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400" alt="Tây Hồ" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="chapter-media"><img src="https://www.haytour.com.vn/datafiles/50960/upload/images/TRUNG%20QU%E1%BB%90C/C%E1%BB%ACU%20HOA%20S%C6%A0N/37.jpg" alt="Tề Vân Sơn" loading="lazy" referrerpolicy="no-referrer" /></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chapter" id="chapter-6">
+        <div class="chapter-grid">
+          <div class="chapter-index">
+            <span class="badge">06</span>
+            <span class="label">Return</span>
+          </div>
+          <div class="chapter-copy">
+            <h3>Kết bằng cáp treo, thắng cảnh núi và chuyến bay về nhà</h3>
+            <div class="chapter-route">Tề Vân Sơn • Đồn Khê • TP.HCM</div>
+            <p>Chương cuối không kéo dài. Nó dùng để chốt hành trình bằng cảm giác cao độ trên núi rồi thu lại về sân bay. Với layout mới, phần kết này nhẹ và có khoảng thở, thay vì nhồi thêm quá nhiều thẻ thông tin nhỏ.</p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Điểm chính</strong>
+                <p>Cáp treo Tề Vân, các cổng núi và mua sắm trước khi ra sân bay.</p>
+              </div>
+              <div class="fact">
+                <strong>Kết thúc</strong>
+                <p>Không nghỉ đêm, về lại TP.HCM trong ngày.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chapter-gallery">
+            <div class="chapter-media"><img src="https://hanvinatravel.vn/uploads/images/cap-treo-van-coc-2_1.jpg" alt="Cáp treo Tề Vân" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="mini">
+              <strong>Điểm dừng cuối</strong>
+              <p>Kết bằng một hình ảnh có chiều cao và cảm giác thoáng để khóa lại toàn bộ câu chuyện.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <section class="closing">
+        <div>
+          <span class="eyebrow">Design Note</span>
+          <h3>Đây là một layout khác cấu trúc hoàn toàn.</h3>
+          <p>Nó không đi theo mô típ hero + card grid + deals + review. Nó cũng không giống timeline kính mờ của `index.html`. Thay vào đó là một trang dạng chương hồi với cột điều hướng cố định và nội dung kể chuyện ở cột phải.</p>
+        </div>
+        <div class="closing-boxes">
+          <div class="closing-box">
+            <strong>Bố cục</strong>
+            <p>Sidebar sticky và content chapter lớn.</p>
+          </div>
+          <div class="closing-box">
+            <strong>Nhịp đọc</strong>
+            <p>Chậm, có điểm nghỉ, thiên về trình bày câu chuyện.</p>
+          </div>
+          <div class="closing-box">
+            <strong>Phong cách</strong>
+            <p>Tông giấy, serif mạnh, cảm giác editorial hơn.</p>
+          </div>
+          <div class="closing-box">
+            <strong>Mục tiêu</strong>
+            <p>Làm `share.html` khác hẳn mọi phiên bản trước.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+</main>
+</body>
+</html>
